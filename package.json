@@ -1,0 +1,19 @@
+{
+  "name": "bun",
+  "module": "ES2022",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bun run src/app.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.34.1",
+    "hono": "^4.2.4",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.12",
+    "drizzle-kit": "^0.25.0",
+    "tsx": "^4.19.1"
+  }
+}
