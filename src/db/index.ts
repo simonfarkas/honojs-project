@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import { drizzle } from "drizzle-orm/connect";
-import { eq } from 'drizzle-orm';
 import { usersTable } from './schema';
 
 async function fetchUsers() {
@@ -10,12 +9,9 @@ async function fetchUsers() {
   return users;
 }
 
-async function addUser() {
+async function addUser(input: { name: string; age: number; email: string }): Promise<void> {
   const db = await drizzle("mysql2", process.env.DATABASE_URL ?? 'mysql://root:root@localhost:8889/test');
-  
-  const user = await db.insert(usersTable).values({ name: 'John', age: 30, email: 'john@gmail.com' });
-  return user;
+  await db.insert(usersTable).values({ name: input.name, age: input.age, email: input.email });
 }
 
 export { fetchUsers, addUser };
-
