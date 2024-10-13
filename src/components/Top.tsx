@@ -1,6 +1,11 @@
 import { FC } from 'hono/jsx';
+import { User } from '../interfaces/User';
 
-const Top: FC<{ users: Array<{ id: number; name: string; age: number; email: string }>; addUser: (input: { name: string; age: number; email: string }) => Promise<void> }> = ({ users, addUser }) => {
+interface TopProps {
+  users: User[];
+}
+
+const Top: FC<TopProps> = ({ users }) => {
   return (
     <div>
       <h1>User List</h1>
