@@ -3,7 +3,7 @@
   "module": "ES2022",
   "license": "MIT",
   "scripts": {
-    "dev": "bun run src/app.ts"
+    "dev": "bun run --watch src/app.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

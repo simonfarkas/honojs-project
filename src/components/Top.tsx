@@ -8,18 +8,22 @@ interface TopProps {
 const Top: FC<TopProps> = ({ users }) => {
   return (
     <div>
-      <h1>User List</h1>
-      <ul>
+      <div class='flex flex-row w-full justify-between px-10'>
+        <h1 class='text-2xl'>User List</h1>
+        <ul className='flex'>
+          <li>
+            <a href='/'>Home</a>
+          </li>
+          <li>
+            <a href='/about'>About</a>
+          </li>
+        </ul>
+      </div>
+      <ul class='p-10'>
         {users.map(user => (
           <li key={user.id}>{user.name} - {user.age} - {user.email}</li>
         ))}
       </ul>
-      <form action="/add-user" method="post">
-        <input type="text" name="name" placeholder="name" required />
-        <input type="number" name="age" placeholder="age" required />
-        <input type="email" name="email" placeholder="email" required />
-        <button type="submit">Add User</button>
-      </form>
     </div>
   );
 };
